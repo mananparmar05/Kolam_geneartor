@@ -8,8 +8,13 @@ import matplotlib.pyplot as plt
 import torch
 from diffusers import StableDiffusionPipeline
 
-# 🔓 Unzip LoRA weights if not already extracted
+# 🔧 Reassemble and unzip LoRA weights if not already extracted
 if not os.path.exists("instance_images_output"):
+    st.info("Reassembling LoRA weights...")
+    with open("kolam_lora.zip", "wb") as f_out:
+        for part in ["kolam_part_aa", "kolam_part_ab"]:
+            with open(part, "rb") as f_in:
+                f_out.write(f_in.read())
     with zipfile.ZipFile("kolam_lora.zip", 'r') as zip_ref:
         zip_ref.extractall("instance_images_output")
 
