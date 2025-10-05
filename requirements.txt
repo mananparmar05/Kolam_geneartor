@@ -1,0 +1,1 @@
+diffusers\ntransformers\naccelerate\ntorch\ngradio\ntorchvision\nmatplotlib\nsafetensors
