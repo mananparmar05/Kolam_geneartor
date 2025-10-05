@@ -6,7 +6,8 @@ import torchvision.transforms as T
 from torchvision.utils import make_grid
 import matplotlib.pyplot as plt
 import torch
-from diffusers import StableDiffusionPipeline
+from diffusers.pipelines.stable_diffusion import StableDiffusionPipeline
+
 
 # 🔧 Reassemble and unzip LoRA weights if not already extracted
 if not os.path.exists("instance_images_output"):
